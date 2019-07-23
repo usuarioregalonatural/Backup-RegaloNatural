@@ -8,8 +8,10 @@
         # Atributos de la clase conexion
         private $mysqli = '';
         private $usuario = 'root';
-        private $clave = '';
+        private $clave = 'vmsn2004';
         private $server = 'localhost';
+//        private $server = 'backup.regalonatural.com:33060'; // Produccion
+
         private $db = 'login';
 
 

@@ -95,7 +95,7 @@
               <div class="spacing-2"></div>
               
               <p>
-                  <!--           No tienes una cuenta? <a href="registro.php"> Registrate!</a> -->
+                             No tienes una cuenta? <a href="registro.php"> Registrate!</a>
                            </p>
                          </section>
 
