@@ -6,3 +6,6 @@
  * Time: 11:39
  */
 echo "Pagina Principal";
+
+?>
+
