@@ -115,7 +115,9 @@
         if($_SESSION['cargo'] == 1){
           echo 'view/admin/index.php';
         }else if($_SESSION['cargo'] == 2){
-          echo 'view/user/index.php';
+            echo 'view/dashboard/index.html';
+
+         //   echo 'view/user/index.php';
         }
 
 

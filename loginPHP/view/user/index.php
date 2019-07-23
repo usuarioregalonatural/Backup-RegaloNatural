@@ -14,6 +14,12 @@
     <title>User</title>
   </head>
   <body>
+
+  <div class="container-fluid">
+      <!-- Content here -->
+      <h1>Bienvenido al area de Backup de RegaloNatural </h1>
+  </div>
+
     <!-- ucfirst convierte la primera letra en mayusculas de una cadena -->
     Hola usuario estandar <?php echo ucfirst($_SESSION['nombre']); ?>
     <a href="../../controller/cerrarSesion.php">
