@@ -1,0 +1,10 @@
+El id del backup es: 2019080322173414120818
+El inicio es: 20190803221731
+El fin es: 20190803221734
+El fs es: /dev/md3
+El size es: 4288765512
+El used es: 185196808
+El available es: 3887404480
+El usepor es: 5%
+El mountedon es: /home
+
