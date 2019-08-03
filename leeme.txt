@@ -1,0 +1,5 @@
+Para enviar parametros al servicio por curl:
+
+-  curl http://backup-regalonatural/service/registrabackup.php?inicio=20190803193718\&fin=20190803193721
+
+Ojo, hay que escapar el simbolo &

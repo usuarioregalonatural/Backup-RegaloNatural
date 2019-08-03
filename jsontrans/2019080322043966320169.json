@@ -1,0 +1,20 @@
+{
+   "id":"2019080322043966320169",
+   "tiempos":{
+      "inicio":"20190803220436",
+      "fin":"20190803220439"
+   },
+   "ocupacion":{
+      "filesystem":"/dev/md3",
+      "size":"4288765512",
+      "used":"185196336",
+      "available":"3887404952",
+      "use_por":"5%",
+      "mountedon":"/home"
+   },
+   "log":{
+      "ubicacion":"/home/nousers/copia-seguridad/logs",
+      "nombrefichero":"Log_Backup_20190803-22.04.36.txt",
+      "nombrerutacompleta":"/home/nousers/copia-seguridad/logs/Log_Backup_20190803-22.04.36.txt"
+   }
+}
