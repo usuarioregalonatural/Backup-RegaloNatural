@@ -1,0 +1,21 @@
+{
+   "id":"9019080323244726124179",
+   "ocupado_copia":"659768",
+   "tiempos":{
+      "inicio":"20190803232444",
+      "fin":"20190803232447"
+   },
+   "ocupacion":{
+      "filesystem":"/dev/md3",
+      "size":"4288765512",
+      "used":"185196892",
+      "available":"3887404396",
+      "use_por":"5%",
+      "mountedon":"/home"
+   },
+   "log":{
+      "ubicacion":"/home/nousers/copia-seguridad/logs",
+      "nombrefichero":"Log_Backup_20190803-23.24.44.txt",
+      "nombrerutacompleta":"/home/nousers/copia-seguridad/logs/Log_Backup_20190803-23.24.44.txt"
+   }
+}

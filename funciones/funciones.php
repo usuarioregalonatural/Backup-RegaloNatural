@@ -35,3 +35,8 @@ function LeeJson($archivo){
     $datos=json_decode(file($archivo),true);
 
 }
+
+function A_Fecha_Mysql($fechastring){
+    $fechamysql=date('Y-m-d H:i:s',strtotime(ExtraeFecha($fechastring). "" . ExtraeHora($fechastring)));
+    return $fechamysql;
+}
