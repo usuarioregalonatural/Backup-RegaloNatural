@@ -13,7 +13,7 @@
         private $server = 'backup.regalonatural.com:33060'; // Produccion
 
         private $db = 'login';
-
+        public $num_registros;
 
         # Funcion que permite conectarnos a la base de datos
         public function conectar()
