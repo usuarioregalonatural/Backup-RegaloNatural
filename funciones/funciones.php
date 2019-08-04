@@ -40,3 +40,12 @@ function A_Fecha_Mysql($fechastring){
     $fechamysql=date('Y-m-d H:i:s',strtotime(ExtraeFecha($fechastring). "" . ExtraeHora($fechastring)));
     return $fechamysql;
 }
+
+function Porcen_Completo($valor_maximo, $valor_actual){
+    $tmpresultado=($valor_actual*100)/$valor_maximo;
+ //   echo "El resultado tmp es: " . $tmpresultado . "<br>";
+    $resultado=round($tmpresultado,2,PHP_ROUND_HALF_UP);
+   // echo "Redondeado es: " .$resultado . "<br>";
+ //   echo "Redondeando: 11.3286-->" . round(11.3286,2,PHP_ROUND_HALF_UP). "<br>";
+    return $resultado;
+}

@@ -27,6 +27,7 @@
 require_once ('../../model/datosespacio.php');
 require_once ('../../model/datosejecuciones.php');
 require_once ('../../model/datosdeejecuciones.php');
+require_once ('../../funciones/funciones.php');
 ?>
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
@@ -157,9 +158,20 @@ require_once ('../../model/datosdeejecuciones.php');
                   <?php
                     $datos= new Datosespacio();
                     $datos->Ver();
-                    echo "Espacio actual (Gb):   " . "<b>". $datos->ocup_size_formateado . "</b>";
+                    echo "Espacio Ocupado:  " . "<b>". $datos->ocup_usado_formateado . " Gb</b>";
+
                   ?>
+                 (<?php echo Porcen_Completo($datos->ocup_size,$datos->ocup_usado) ?>%)
                 </div>
+                  <!-- Nueva de prueba-->
+                  <div class=”progress”>
+                      <div class="progress">
+                          <div class="progress-bar progress-bar-striped bg-warning" role="progressbar"
+                               style="width:<?php echo Porcen_Completo($datos->ocup_size,$datos->ocup_usado) ?>%"
+                               aria-valuenow="<?php echo $datos->ocup_usado?>" aria-valuemin="0" aria-valuemax="<?php echo $datos->ocup_size?>"></div>
+                      </div>
+                  </div>
+                  <!-- Nueva de prueba-->
               </div>
               <a class="card-footer text-white clearfix small z-1" href="#">
                 <span class="float-left">View Details</span>
