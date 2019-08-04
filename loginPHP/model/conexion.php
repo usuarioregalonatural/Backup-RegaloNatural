@@ -54,6 +54,18 @@
           return mysqli_fetch_array($this->mysqli->query($consulta));
         }
 
+        # Funcion para devolver TODOS los registros de una consulta
+        public function devuelveRegistros($consulta){
+            $num_registros=mysqli_num_rows($this->mysqli->query($consulta));
+            if ($num_registros > 0)
+            {
+                for ($i=0; $i<$num_registros; $i++){
+                    $resultado[$i]=mysqli_fetch_assoc($this->mysqli->query($consulta));
+                }
+                return $resultado;
+            }
+
+        }
 
         # Function que permite cerrar una conexion de MySQL
         public function cerrar()

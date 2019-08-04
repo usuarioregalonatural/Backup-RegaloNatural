@@ -14,6 +14,8 @@ class Datosespacio extends Conexion
     public $ocup_size;
     public $ocup_size_formateado;
     public $ocup_usado;
+    public $ocup_usado_formateado;
+
     public $ocup_available;
     public $num_registros;
     public $resultado;
@@ -29,6 +31,7 @@ class Datosespacio extends Conexion
         $this->ocup_usado=$this->resultado['ocup_usado'];
 
         $this->ocup_size_formateado=number_format($this->ocup_size/1024/1024);
+        $this->ocup_usado_formateado=number_format($this->ocup_usado/1024/1024);
         parent::cerrar();
 
 

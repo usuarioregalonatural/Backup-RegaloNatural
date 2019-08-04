@@ -26,6 +26,7 @@
 <?php
 require_once ('../../model/datosespacio.php');
 require_once ('../../model/datosejecuciones.php');
+require_once ('../../model/datosdeejecuciones.php');
 ?>
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
@@ -156,7 +157,7 @@ require_once ('../../model/datosejecuciones.php');
                   <?php
                     $datos= new Datosespacio();
                     $datos->Ver();
-                    echo "Espacio actual (Gb): " . $datos->ocup_size_formateado;
+                    echo "Espacio actual (Gb):   " . "<b>". $datos->ocup_size_formateado . "</b>";
                   ?>
                 </div>
               </div>
@@ -174,7 +175,15 @@ require_once ('../../model/datosejecuciones.php');
                 <div class="card-body-icon">
                   <i class="fas fa-fw fa-list"></i>
                 </div>
-                <div class="mr-5">11 New Tasks!</div>
+                <div class="mr-5">
+                    <?php
+                    $datos= new Datosespacio();
+                    $datos->Ver();
+                    echo "Espacio Usado (Gb):   " . "<b>". $datos->ocup_usado_formateado . "</b>";
+                    ?>
+
+
+                </div>
               </div>
               <a class="card-footer text-white clearfix small z-1" href="#">
                 <span class="float-left">View Details</span>
@@ -219,12 +228,12 @@ require_once ('../../model/datosejecuciones.php');
         </div>
 
         <!-- Area Chart Example-->
-        <div class="card mb-3">
+        <div class="card mb-b3">
           <div class="card-header">
             <i class="fas fa-chart-area"></i>
-            Area Chart Example</div>
+            Rendimiento Ejecuciones</div>
           <div class="card-body">
-            <canvas id="myAreaChart" width="100%" height="30"></canvas>
+            <canvas id="graficoChartArea" width="100%" height="30"></canvas>
           </div>
           <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
         </div>
@@ -259,11 +268,11 @@ require_once ('../../model/datosejecuciones.php');
                 </tfoot>
                 <tbody>
                 <?php
-                $datos= new Datosejecuciones();
-                $datos->Obtener();
-                foreach ($datos as $registro){
+                $datos=new Datosdeejecuciones();
+                $datos->obtenerdatos();
+
+                foreach ($datos->resultado as $registro){
                     $tamanyo=number_format($registro['size_fs']);
-                //    $tamanyo=$registro['size_fs'];
                     echo "<tr>";
                     echo "<td>" . $registro['id_backup'] . "</td>";
                     echo "<td>" . $registro['fx_inicio'] . "</td>";
@@ -272,9 +281,8 @@ require_once ('../../model/datosejecuciones.php');
                     echo "<td>" . $tamanyo. "</td>";
                     echo "<td>" . "</td>";
                     echo "</tr>";
-                        //var_dump($datos);
-                    }
-                ?>
+                }
+              ?>
                 </tbody>
               </table>
             </div>
@@ -340,8 +348,20 @@ require_once ('../../model/datosejecuciones.php');
   <script src="js/sb-admin.min.js"></script>
 
   <!-- Demo scripts for this page-->
-  <script src="js/demo/datatables-demo.js"></script>
   <script src="js/demo/chart-area-demo.js"></script>
+  <script src="js/demo/datatables-demo.js"></script>
+  <script src="js/backup/chart-area.js"></script>
+
+<!-- jQuery -->
+
+<script crossorigin="anonymous" integrity="sha384-xBuQ/xzmlsLoJpyjoggmTEz8OWUFM0/RC5BsqQBDX2v5cMvDHcMakNTNrHIW2I5f" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<!-- Chart JS -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js" integrity="sha256-JG6hsuMjFnQ2spWq0UiaDRJBaarzhFbUxiUTxQDA9Lk=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js" integrity="sha256-XF29CBwU1MWLaGEnsELogU6Y6rcc5nCkhhx89nFMIDQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js" integrity="sha256-J2sc79NPV/osLcIpzL3K8uJyAD7T5gaEFKlLDM18oxY=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js" integrity="sha256-CfcERD4Ov4+lKbWbYqXD6aFM9M51gN4GUEtDhkWABMo=" crossorigin="anonymous"></script>
 
 </body>
 
