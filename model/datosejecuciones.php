@@ -20,7 +20,9 @@ class Datosejecuciones extends Conexion
         $consulta = "select id_backup, fx_inicio, fx_fin, timediff(fx_fin, fx_inicio) as duracion, size_fs, ocup_size, ocup_usado, ocup_available from registro_backup order by fx_inicio desc";
         parent::query($consulta);
         $this->num_registros = parent::verificarRegistros($consulta);
-        $this->resultado = parent::consultaArreglo($consulta);
+  //      $this->resultado = parent::consultaArreglo($consulta);
+        $this->resultado = parent::devuelveRegistros($consulta);
+        echo "Los drivers son: " .var_dump(PDO::getAvailableDrivers());
         parent::cerrar();
 
     }
