@@ -11,6 +11,7 @@
         private $clave = 'vmsn2004';
 //        private $server = 'localhost';
         private $server = 'backup.regalonatural.com:33060'; // Produccion
+    //private $server ='172.22.0.2:3306'; // Produccion
 
         private $db = 'login';
         public $num_registros;
