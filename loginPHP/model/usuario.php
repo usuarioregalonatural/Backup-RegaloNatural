@@ -113,9 +113,9 @@
 
         // Verificamos que cargo tiene l usuario y asi mismo dar la respuesta a ajax para que redireccione
         if($_SESSION['cargo'] == 1){
-          echo 'view/admin/index.php';
+          echo '../../view/admin/index.php';
         }else if($_SESSION['cargo'] == 2){
-            echo 'view/dashboard/index.html';
+            echo '../../view/dashboard/index.php';
 
          //   echo 'view/user/index.php';
         }
