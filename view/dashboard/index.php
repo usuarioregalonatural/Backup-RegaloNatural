@@ -113,6 +113,7 @@ require_once ('../../funciones/funciones.php');
           <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
           <div class="dropdown-divider"></div>
           <h6 class="dropdown-header">Other Pages:</h6>
+          <a class="dropdown-item" href="datoscarros.php">Carritos</a>
           <a class="dropdown-item" href="404.html">404 Page</a>
           <a class="dropdown-item" href="blank.html">Blank Page</a>
         </div>
