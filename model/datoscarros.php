@@ -16,6 +16,7 @@ class Datoscarros extends conexionPDOWeb
         parent::conectar();
         $consulta = "select id_cart FROM ps_cart where date_add>'2019-09-20';";
         $this->resultado=parent::obtiene_consulta($consulta);
+	echo "Estoy consultando!!!!";
         parent::desconectar();
     }
 
