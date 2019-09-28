@@ -28,6 +28,8 @@ require_once ('../../model/datosespacio.php');
 require_once ('../../model/datosejecuciones.php');
 require_once ('../../model/datosdeejecuciones.php');
 require_once ('../../funciones/funciones.php');
+require_once ('../../config/config.php');
+
 ?>
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
@@ -113,6 +115,7 @@ require_once ('../../funciones/funciones.php');
           <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
           <div class="dropdown-divider"></div>
           <h6 class="dropdown-header">Other Pages:</h6>
+          <a class="dropdown-item" href="datoscarros.php">Carritos</a>
           <a class="dropdown-item" href="404.html">404 Page</a>
           <a class="dropdown-item" href="blank.html">Blank Page</a>
         </div>
@@ -281,6 +284,8 @@ require_once ('../../funciones/funciones.php');
                 <tbody>
                 <?php
                 $datos=new Datosdeejecuciones();
+             //   $datos->host=$gbl_servidor_backup;
+            //    $datos->cnx_host=$gbl_servidor_backup;
                 $datos->obtenerdatos();
 
                 foreach ($datos->resultado as $registro){

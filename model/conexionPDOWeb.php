@@ -6,28 +6,27 @@
  * Time: 13:59
  */
 
-class ConexionPDO
+class ConexionPDOWeb
 {
     # Atributos de la clase conexion
     private $mysqli = '';
-    private $usuario = 'root';
+    private $usuario = 'vicsoft';
     private $clave = 'vmsn2004';
- //   private $server = 'backup.regalonatural.com:33060'; // Desarrollo
-    private $server ='backup_bbdd:3306'; // Produccion
+//    private $server ='test.regalonatural.com:51000'; // Deasarrollo
+    private $server ='tienda-test-no-ssl:3306'; // Produccion
 
-    private $db = 'login';
+    private $db = 'regalonatural';
     private $dbh;
     public $datos;
-    public $cnx_host;
-    public $cnx_user;
-    public $cnx_pass;
 
     public function conectar(){
         try {
-            $dsn = "mysql:host=". $this->server .";dbname=".$this->db;
-//            $dsn = "mysql:host=". $this->cnx_host .";dbname=".$this->db;
+//            $dsn = "mysql:host=". $this->server .";dbname=".$this->db . ";port=51000";
+            $dsn = "mysql:host=". $this->server .";dbname=".$this->db ;
             $this->dbh = new PDO($dsn, $this->usuario, $this->clave);
+            echo "Conectado a Web!!!";
             } catch (PDOException $e){
+            echo "Error conectando a PDOWeb -> ";
             echo $e->getMessage();
             }
     }
