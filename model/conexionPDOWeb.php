@@ -16,7 +16,7 @@ class ConexionPDOWeb
     //private $server = 'backup.regalonatural.com:33060'; // Produccion
    // private $server = 'www.regalonatural.com:3360'; // Produccion
    //private $server ='test.regalonatural.com'; // Produccion
-    private $server ='172.30.128.21'; // Produccion
+    private $server ='tienda-test-no-ssl:3306'; // Produccion
 
     private $db = 'regalonatural';
     private $dbh;
