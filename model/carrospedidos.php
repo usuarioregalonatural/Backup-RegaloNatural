@@ -9,12 +9,12 @@
 require_once('conexionPDOWeb.php');
 require_once('../../funciones/funciones.php');
 
-class Datoscarros extends conexionPDOWeb
+class CarrosPedidos extends conexionPDOWeb
 {
     public $resultado;
     function obtenerdatos(){
         parent::conectar();
-        $consulta=Fichero_SQL("Datoscarros.sql");
+        $consulta=Fichero_SQL("Carros-Pedidos.sql");
   //      echo $consulta;
         $this->resultado=parent::obtiene_consulta($consulta);
         parent::desconectar();

@@ -30,6 +30,7 @@ require_once ('../../model/datosdeejecuciones.php');
 require_once ('../../funciones/funciones.php');
 require_once ('../../config/config.php');
 require_once ('../../model/datoscarros.php');
+require_once ('../../model/carrospedidos.php');
 
 ?>
 
@@ -243,57 +244,121 @@ require_once ('../../model/datoscarros.php');
                 </div>
             </div>
 
-            <!-- DataTables Example -->
-<div class="card mb-3">
-    <div class="card-header">
-        <i class="fas fa-table"></i>
-        Data Table Example</div>
-    <div class="card-body">
-        <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                <tr>
-                    <th>Id. Backup</th>
-                    <th>Inicio</th>
-                    <th>Fin</th>
-                    <th>Duracion</th>
-                    <th>Tamao</th>
-                    <th>Salary</th>
-                </tr>
-                </thead>
-                <tfoot>
-                <tr>
-                    <th>Id. Backup</th>
-                    <th>Inicio</th>
-                    <th>Fin</th>
-                    <th>Duracion</th>
-                    <th>Tamao</th>
-                    <th>Salary</th>
-                </tr>
-                </tfoot>
-                <tbody>
-                <?php
-                $datos=new Datoscarros();
-                $datos->obtenerdatos();
+            <!-- Productos Abandonados -->
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fas fa-table"></i>
+                    Productos Abandonados</div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                            <tr>
+                                <th>Fecha Carro</th>
+                                <th>Mes</th>
+                                <th>Nº Carros</th>
+                                <th>Producto</th>
+                                <th>Nº Prod/Carro</th>
+                                <th>Importe Prod/Carro</th>
+                            </tr>
+                            </thead>
+                            <tfoot>
+                            <!--          <tr>
+                                        <th>Id. Backup</th>
+                                        <th>Inicio</th>
+                                        <th>Fin</th>
+                                        <th>Duracion</th>
+                                        <th>Tamao</th>
+                                        <th>Salary</th>
+                                      </tr> -->
+                            </tfoot>
+                            <tbody>
+                            <?php
+                            $datos=new Datoscarros();
+                            //   $datos->host=$gbl_servidor_backup;
+                            //    $datos->cnx_host=$gbl_servidor_backup;
+                            $datos->obtenerdatos();
 
-                foreach ($datos->resultado as $registro){
-               // $tamanyo=number_format($registro['size_fs']);
-                echo "<tr>";
-                    echo "<td>" . $registro['id_cart'] . "</td>";
-    /*                echo "<td>" . $registro['fx_inicio'] . "</td>";
-                    echo "<td>" . $registro['fx_fin'] . "</td>";
-                    echo "<td>" . $registro['duracion'] . "</td>";
-                    echo "<td>" . $tamanyo. "</td>";
-                    echo "<td>" . "</td>";*/
-                    echo "</tr>";
-                }
-                ?>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-</div>
+                            foreach ($datos->resultado as $registro){
+                                //    $tamanyo=number_format($registro['size_fs']);
+                                echo "<tr>";
+                                echo "<td>" . $registro['Fecha_Carro'] . "</td>";
+                                echo "<td>" . $registro['Mes_Carro'] . "</td>";
+                                echo "<td>" . $registro['Num_Carritos'] . "</td>";
+                                echo "<td>" . $registro['Producto'] . "</td>";
+                                echo "<td>" . $registro['Num_Productos_Carritos'] . "</td>";
+                                echo "<td>" . $registro['Importe_Prod_Carritos'] . "</td>";
+
+                                //     echo "<td>" . $tamanyo. "</td>";
+                                echo "<td>" . "</td>";
+                                echo "</tr>";
+                            }
+                            ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+            </div>
+            <!-- Productos Abandonados -->
+            <!-- Carros Pedidos -->
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fas fa-table"></i>
+                    Productos Abandonados</div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                            <tr>
+                                <th>Fecha Carro</th>
+                                <th>Mes</th>
+                                <th>Nº Carros</th>
+                                <th>Producto</th>
+                                <th>Nº Prod/Carro</th>
+                                <th>Importe Prod/Carro</th>
+                            </tr>
+                            </thead>
+                            <tfoot>
+                            <!--          <tr>
+                                        <th>Id. Backup</th>
+                                        <th>Inicio</th>
+                                        <th>Fin</th>
+                                        <th>Duracion</th>
+                                        <th>Tamao</th>
+                                        <th>Salary</th>
+                                      </tr> -->
+                            </tfoot>
+                            <tbody>
+                            <?php
+                            $datos=new CarrosPedidos();
+                            //   $datos->host=$gbl_servidor_backup;
+                            //    $datos->cnx_host=$gbl_servidor_backup;
+                            $datos->obtenerdatos();
+
+                            foreach ($datos->resultado as $registro){
+                                //    $tamanyo=number_format($registro['size_fs']);
+                                echo "<tr>";
+                                echo "<td>" . $registro['Fecha_Carro'] . "</td>";
+                                echo "<td>" . $registro['Mes_Carro'] . "</td>";
+                                echo "<td>" . $registro['Num_Carritos'] . "</td>";
+                                echo "<td>" . $registro['Producto'] . "</td>";
+                                echo "<td>" . $registro['Num_Productos_Carritos'] . "</td>";
+                                echo "<td>" . $registro['Importe_Prod_Carritos'] . "</td>";
+
+                                //     echo "<td>" . $tamanyo. "</td>";
+                                echo "<td>" . "</td>";
+                                echo "</tr>";
+                            }
+                            ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+            </div>
+            <!-- Carros Pedidos -->
+
 
 </div>
 <!-- /.container-fluid -->
