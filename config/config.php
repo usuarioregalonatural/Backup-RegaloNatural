@@ -7,8 +7,8 @@
  */
 $ruta="miruta";
 
-$entorno="Desarrollo";
-//$entorno="Produccion";
+//$entorno="Desarrollo";
+$entorno="Produccion";
 // $ruta_sql="../SQL/";
  $ruta_json="../jsontrans/";
 # $gbl_servidor = 'backup.regalonatural.com:33060'; // Desarrollo
