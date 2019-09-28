@@ -13,3 +13,6 @@ $ruta="miruta";
 //$gbl_servidor='172.22.0.2:3306'; // Produccion
 $gbl_servidor='172.29.0.2:3306'; // Produccion
 
+$entorno="Desarrollo";
+//$entorno="Produccion";
+
