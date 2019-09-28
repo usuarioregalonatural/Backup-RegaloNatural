@@ -40,7 +40,7 @@ require_once('../config/config.php');
 
  $usuario = 'root';
  $clave = 'vmsn2004';
-// $server = 'backup.regalonatural.com:33060'; // Produccion
+ //$server = 'backup.regalonatural.com:33060'; // Produccion
  $server=$gbl_servidor;
  $db = 'login';
  $dbh=null;
