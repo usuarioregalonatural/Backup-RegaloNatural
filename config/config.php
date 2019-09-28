@@ -6,8 +6,8 @@
  * Time: 18:38
  */
 
-$entorno="Desarrollo";
-//$entorno="Produccion";
+//$entorno="Desarrollo";
+$entorno="Produccion";
 
 $ruta="miruta";
 
