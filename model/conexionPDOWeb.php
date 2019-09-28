@@ -13,8 +13,15 @@ class ConexionPDOWeb
     private $usuario = 'vicsoft';
     private $clave = 'vmsn2004';
 //        private $server = 'localhost';
+<<<<<<< HEAD
     private $server = 'test.regalonatural.com:3360'; // Produccion
 //    private $server ='172.30.128.21:3306'; // Produccion
+=======
+    //private $server = 'backup.regalonatural.com:33060'; // Produccion
+   // private $server = 'www.regalonatural.com:3360'; // Produccion
+   //private $server ='test.regalonatural.com'; // Produccion
+    private $server ='172.30.128.21'; // Produccion
+>>>>>>> e6751e11d3f165ef6c3323fad5cb78ca00454794
 
     private $db = 'regalonatural';
     private $dbh;
@@ -22,11 +29,11 @@ class ConexionPDOWeb
 
     public function conectar(){
         try {
-            $dsn = "mysql:host=". $this->server .";dbname=".$this->db;
+            $dsn = "mysql:host=". $this->server .";dbname=".$this->db . ";port=51000";
             $this->dbh = new PDO($dsn, $this->usuario, $this->clave);
             echo "Conectado a Web!!!";
             } catch (PDOException $e){
-            echo "Error conectando a PDOWeb";
+            echo "Error conectando a PDOWeb -> ";
             echo $e->getMessage();
             }
     }

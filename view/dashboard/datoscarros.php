@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Datos Carros</title>
 </head>
 <body>
+Esto es una prueba
 <?php
 require_once ('../../model/datoscarros.php');
 require_once ('../../funciones/funciones.php');
@@ -78,6 +79,6 @@ require_once ('../../funciones/funciones.php');
 
 </div>
 <!-- /#wrapper -->
-
+aqui acaba el body
 </body>
 </html>
