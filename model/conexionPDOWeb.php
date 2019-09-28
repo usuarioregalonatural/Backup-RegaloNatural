@@ -12,8 +12,8 @@ class ConexionPDOWeb
     private $mysqli = '';
     private $usuario = 'vicsoft';
     private $clave = 'vmsn2004';
-    private $server ='tienda-test-no-ssl:3306'; // Produccion
 //    private $server ='test.regalonatural.com:51000'; // Deasarrollo
+    private $server ='tienda-test-no-ssl:3306'; // Produccion
 
     private $db = 'regalonatural';
     private $dbh;

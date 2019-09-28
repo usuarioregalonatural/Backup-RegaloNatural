@@ -12,16 +12,20 @@ class ConexionPDO
     private $mysqli = '';
     private $usuario = 'root';
     private $clave = 'vmsn2004';
-//    private $server = 'backup.regalonatural.com:33060'; // Produccion
+ //   private $server = 'backup.regalonatural.com:33060'; // Desarrollo
     private $server ='backup_bbdd:3306'; // Produccion
 
     private $db = 'login';
     private $dbh;
     public $datos;
+    public $cnx_host;
+    public $cnx_user;
+    public $cnx_pass;
 
     public function conectar(){
         try {
             $dsn = "mysql:host=". $this->server .";dbname=".$this->db;
+//            $dsn = "mysql:host=". $this->cnx_host .";dbname=".$this->db;
             $this->dbh = new PDO($dsn, $this->usuario, $this->clave);
             } catch (PDOException $e){
             echo $e->getMessage();

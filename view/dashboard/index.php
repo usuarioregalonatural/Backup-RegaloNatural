@@ -28,6 +28,8 @@ require_once ('../../model/datosespacio.php');
 require_once ('../../model/datosejecuciones.php');
 require_once ('../../model/datosdeejecuciones.php');
 require_once ('../../funciones/funciones.php');
+require_once ('../../config/config.php');
+
 ?>
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
@@ -282,6 +284,8 @@ require_once ('../../funciones/funciones.php');
                 <tbody>
                 <?php
                 $datos=new Datosdeejecuciones();
+             //   $datos->host=$gbl_servidor_backup;
+            //    $datos->cnx_host=$gbl_servidor_backup;
                 $datos->obtenerdatos();
 
                 foreach ($datos->resultado as $registro){
