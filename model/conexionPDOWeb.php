@@ -13,15 +13,7 @@ class ConexionPDOWeb
     private $usuario = 'vicsoft';
     private $clave = 'vmsn2004';
 //        private $server = 'localhost';
-<<<<<<< HEAD
-    private $server = 'test.regalonatural.com:3360'; // Produccion
-//    private $server ='172.30.128.21:3306'; // Produccion
-=======
-    //private $server = 'backup.regalonatural.com:33060'; // Produccion
-   // private $server = 'www.regalonatural.com:3360'; // Produccion
-   //private $server ='test.regalonatural.com'; // Produccion
-    private $server ='172.30.128.21'; // Produccion
->>>>>>> e6751e11d3f165ef6c3323fad5cb78ca00454794
+    private $server ='tienda-test-no-ssl:3306'; // Produccion
 
     private $db = 'regalonatural';
     private $dbh;
