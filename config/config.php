@@ -16,7 +16,7 @@ $ruta="miruta";
 //$gbl_servidor='172.22.0.2:3306'; // Produccion
 //$gbl_servidor='172.29.0.2:3306'; // Produccion
 
-if ($entorno="Desarrollo"){
+if ($entorno=="Desarrollo"){
     $gbl_servidor_backup='backup.regalonatural.com:33060'; // Produccion
 } else {
     $gbl_servidor_backup = 'backup_bbdd:3306'; // Produccion
