@@ -9,8 +9,7 @@
         private $mysqli = '';
         private $usuario = 'root';
         private $clave = 'vmsn2004';
-//        private $server = 'localhost';
- //       private $server = 'backup.regalonatural.com:33060'; // Desarrollo
+//       private $server = 'backup.regalonatural.com:33060'; // Desarrollo
         private $server ='backup_bbdd:3306'; // Produccion
 
         private $db = 'login';
