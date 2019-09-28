@@ -12,8 +12,8 @@ class ConexionPDOWeb
     private $mysqli = '';
     private $usuario = 'vicsoft';
     private $clave = 'vmsn2004';
-//    private $server ='tienda-test-no-ssl:3306'; // Produccion
-    private $server ='test.regalonatural.com:51000'; // Produccion
+    private $server ='tienda-test-no-ssl:3306'; // Produccion
+//    private $server ='test.regalonatural.com:51000'; // Deasarrollo
 
     private $db = 'regalonatural';
     private $dbh;
@@ -21,7 +21,8 @@ class ConexionPDOWeb
 
     public function conectar(){
         try {
-            $dsn = "mysql:host=". $this->server .";dbname=".$this->db . ";port=51000";
+//            $dsn = "mysql:host=". $this->server .";dbname=".$this->db . ";port=51000";
+            $dsn = "mysql:host=". $this->server .";dbname=".$this->db ;
             $this->dbh = new PDO($dsn, $this->usuario, $this->clave);
             echo "Conectado a Web!!!";
             } catch (PDOException $e){
