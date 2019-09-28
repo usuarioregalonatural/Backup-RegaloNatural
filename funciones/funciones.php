@@ -49,3 +49,11 @@ function Porcen_Completo($valor_maximo, $valor_actual){
  //   echo "Redondeando: 11.3286-->" . round(11.3286,2,PHP_ROUND_HALF_UP). "<br>";
     return $resultado;
 }
+
+function Fichero_SQL($nombre_sql_file){
+    $sql="";
+    $fichero="../../SQL/" . $nombre_sql_file;
+    $fp=fopen($fichero,"r");
+    $contenido=fread($fp,filesize($fichero));
+    return $contenido;
+}
