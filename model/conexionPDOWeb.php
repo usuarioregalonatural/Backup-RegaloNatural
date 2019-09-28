@@ -10,11 +10,11 @@ class ConexionPDOWeb
 {
     # Atributos de la clase conexion
     private $mysqli = '';
-    private $usuario = 'root';
+    private $usuario = 'vicsoft';
     private $clave = 'vmsn2004';
 //        private $server = 'localhost';
-//    private $server = 'backup.regalonatural.com:33060'; // Produccion
-    private $server ='172.30.128.21:3306'; // Produccion
+    private $server = 'test.regalonatural.com:3360'; // Produccion
+//    private $server ='172.30.128.21:3306'; // Produccion
 
     private $db = 'regalonatural';
     private $dbh;
