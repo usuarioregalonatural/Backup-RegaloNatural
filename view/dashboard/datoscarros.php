@@ -31,6 +31,7 @@ require_once ('../../funciones/funciones.php');
 require_once ('../../config/config.php');
 require_once ('../../model/datoscarros.php');
 require_once ('../../model/carrospedidos.php');
+require_once ('../../model/datostienda.php');
 
 ?>
 
@@ -358,6 +359,62 @@ require_once ('../../model/carrospedidos.php');
                 <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
             </div>
             <!-- Carros Pedidos -->
+            <!-- Tercera Tabla -->
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fas fa-table"></i>
+                    Productos Abandonados</div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                            <tr>
+                                <th>Fecha Pedido</th>
+                                <th>Mes</th>
+                                <th>Id Prod</th>
+                                <th>Producto</th>
+                                <th>Nº Prod</th>
+                                <th>Importe Prod</th>
+                            </tr>
+                            </thead>
+                            <tfoot>
+                            <!--          <tr>
+                                        <th>Id. Backup</th>
+                                        <th>Inicio</th>
+                                        <th>Fin</th>
+                                        <th>Duracion</th>
+                                        <th>Tamao</th>
+                                        <th>Salary</th>
+                                      </tr> -->
+                            </tfoot>
+                            <tbody>
+                            <?php
+                            $datos=new DatosTienda();
+                            $datos->ficheroSQL="../../SQL/" ."prueba.sql";
+                            $datos->obtenerdatos();
+
+                            foreach ($datos->resultado as $registro){
+                                //    $tamanyo=number_format($registro['size_fs']);
+                                echo "<tr>";
+                                echo "<td>" . $registro['Fecha_Pedido'] . "</td>";
+                                echo "<td>" . $registro['Mes_Pedido'] . "</td>";
+                                echo "<td>" . $registro['Id_Producto'] . "</td>";
+                                echo "<td>" . $registro['Producto'] . "</td>";
+                                echo "<td>" . $registro['Cantidad_Prod_Pedidos'] . "</td>";
+                                echo "<td>" . $registro['Importe_Prod_Pedidos'] . "</td>";
+
+                                //     echo "<td>" . $tamanyo. "</td>";
+                                echo "<td>" . "</td>";
+                                echo "</tr>";
+                            }
+                            ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+            </div>
+            <!-- Tercera Tabla -->
 
 
 </div>

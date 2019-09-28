@@ -52,7 +52,8 @@ function Porcen_Completo($valor_maximo, $valor_actual){
 
 function Fichero_SQL($nombre_sql_file){
     $sql="";
-    $fichero="../../SQL/" . $nombre_sql_file;
+//    $fichero="../../SQL/" . $nombre_sql_file;
+    $fichero=$nombre_sql_file;
     $fp=fopen($fichero,"r");
     $contenido=fread($fp,filesize($fichero));
     return $contenido;

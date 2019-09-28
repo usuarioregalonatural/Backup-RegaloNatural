@@ -14,7 +14,7 @@ class CarrosPedidos extends conexionPDOWeb
     public $resultado;
     function obtenerdatos(){
         parent::conectar();
-        $consulta=Fichero_SQL("Carros-Pedidos.sql");
+        $consulta=Fichero_SQL("../../SQL/" . "Carros-Pedidos.sql");
   //      echo $consulta;
         $this->resultado=parent::obtiene_consulta($consulta);
         parent::desconectar();
